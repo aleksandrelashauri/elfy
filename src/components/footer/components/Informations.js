@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-
   },
   padd: {
     display: 'flex',
