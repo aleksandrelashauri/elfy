@@ -1,6 +1,6 @@
-import React from 'react'
-import ButtonAppBar from './components/NavBar'
-import BackgroundImg from './components/BcgImg'
+import React from "react";
+import ButtonAppBar from "./components/NavBar";
+import BackgroundImg from "./components/BcgImg";
 
 export default function Header() {
   return (
@@ -8,5 +8,5 @@ export default function Header() {
       <ButtonAppBar />
       <BackgroundImg />
     </React.Fragment>
-  )
+  );
 }

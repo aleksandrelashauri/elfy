@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ButtonBase from "@material-ui/core/ButtonBase";
-import { Paper } from "@material-ui/core";
+import { Paper, Typography, Box } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import { products } from "../productsData/productData";
 const useStyles = makeStyles((theme) => ({
@@ -10,13 +10,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(6),
+    padding: theme.spacing(9),
     paddingBottom: 0,
     margin: "auto",
     maxWidth: 3000,
+    overflow: "scroll",
   },
   image: {
-    width: 408,
+    // width: 408,
     height: 238,
     display: "flex",
     flexDirection: "column",
@@ -28,48 +29,39 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "100%",
   },
   card_text: {
-    backgroundColor: "grey",
+    maxWidth: "100%",
   },
 }));
 
 export default function Details() {
+  const classes = useStyles();
   const { id } = useParams();
   const data = products
     .filter((element) => element.id === id)
-    .map(({ price, name, description }) => {
+    .map(({ price, name, description, img }) => {
       return (
         <>
-          <div>{price}</div>
-          <div>{name}</div>
+          <img src={img} alt="imag" className={classes.card_text} />
+          <Typography>{price}</Typography>
+          <Typography>{name}</Typography>
           {description}
         </>
       );
     });
-  console.log(data);
-
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid
-          container
-          spacing={5}
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item>
-            <div className={classes.card_text}>
-              <div className={classes.card_text}>
-                {/* <h1>spring honey</h1>
-                <h2>25 Gel</h2> */}
-                {data}
-              </div>
-            </div>
-          </Grid>
+    <Paper className={classes.paper}>
+      <Grid
+        container
+        direction="row"
+        // justifyContent="center"
+        alignItems="center"
+      >
+        <Grid>
+          <Box>{data}</Box>
+          <Typography>call us 551 03 22 55</Typography>
         </Grid>
-      </Paper>
-    </div>
+      </Grid>
+    </Paper>
+    // </div>
   );
 }

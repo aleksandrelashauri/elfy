@@ -6,9 +6,13 @@ import { useSelector } from "react-redux";
 
 import React from "react";
 import routes from "./routes/routes";
+import ButtonAppBar from "./components/header/components/NavBar";
 function App() {
   const routing = useRoutes(routes());
-  return <>{routing}</>;
+  return <>
+  <ButtonAppBar/>
+  {routing}
+  </>;
 }
 
 export default App;

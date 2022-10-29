@@ -17,20 +17,15 @@ export default function Loyout(props) {
   const classes = useStyles();
   return (
     <Grid container className={classes.grid}>
-      {/* HEADER */}
       <Grid item xs={12}>
         <Header />
       </Grid>
-
-      {/* BODY */}
-      <Grid container xs={12}>
+      <Grid item xs={12}>
         {props.children}
       </Grid>
-
-      <Grid container xs={12}>
+      <Grid item xs={12}>
         <Bla />
       </Grid>
-      {/* FOOTER */}
       <Grid item xs={12}>
         <Footer />
       </Grid>

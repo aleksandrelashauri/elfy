@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 3000,
   },
   image: {
-    width: 408,
+    // width: 408,
     height: 428,
   },
   img: {
@@ -32,12 +32,12 @@ export default function ComplexGrid() {
       <Paper className={classes.paper}>
         <Grid
           container
-          spacing={5}
+          spacing={1}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
         >
-          <Grid item>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <ButtonBase className={classes.image}>
               <img
                 className={classes.img}
@@ -46,7 +46,7 @@ export default function ComplexGrid() {
               />
             </ButtonBase>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <ButtonBase className={classes.image}>
               <img
                 className={classes.img}
@@ -55,7 +55,7 @@ export default function ComplexGrid() {
               />
             </ButtonBase>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <ButtonBase className={classes.image}>
               <img
                 className={classes.img}
@@ -64,7 +64,7 @@ export default function ComplexGrid() {
               />
             </ButtonBase>
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <ButtonBase className={classes.image}>
               <img
                 className={classes.img}

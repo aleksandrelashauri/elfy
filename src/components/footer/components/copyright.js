@@ -20,10 +20,10 @@ export default function CopyRight() {
     const classes = useStyles()
     return (
       <Grid container className={classes.bstflexible}>
-        <Box item className={classes.padd}>
+        <Box  className={classes.padd}>
         © 2020 Copyright: 
         </Box>
-        <Box item>
+        <Box >
        By owner
         </Box>
       </Grid>
