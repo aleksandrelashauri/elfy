@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import ControlledOpenSelect from "./SelectFlag";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-// import { Link } from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 // import { HOMEPAGE, LOGIN, PRIVATE, SIGN_UP } from '../routes'
 // import { useContext } from 'react'
 // // import { UserContext } from '../../../store/UserProvider'
@@ -99,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     maxWidth: "130px",
+    borderRadius:'19px'
   },
 }));
 
@@ -113,23 +114,28 @@ export default function ButtonAppBar() {
       <AppBar position="static" className={classes.ghost}>
         <Toolbar className={classes.flexible}>
           <Typography variant="h6" className={classes.animatedItem}>
-            <img src={logo} alt="surati" className={classes.image} />
+            <Link to="/">
+              {" "}
+              <img src={logo} alt="surati" className={classes.image} />{" "}
+            </Link>
             <Typography className={classes.anim} />
           </Typography>
-          <Button color="inherit">
-            <ShoppingCartIcon />
+          <Button>
+            {" "}
+            <NavLink
+              to="/"
+              style={{ color: "#FFDE59", textDecoration: "none" }}
+            >
+              Home
+            </NavLink>{" "}
           </Button>
-          <Button color="inherit">
-            <ControlledOpenSelect />
-          </Button>
-          <Button>Home</Button>
-          <Button color="inherit">Contact</Button>
 
-          <React.Fragment>
-            <Button color="inherit" className={classes.bTnN}>
-              PROFILE
-            </Button>
-          </React.Fragment>
+          <Button color="inherit">
+            {" "}
+            <Link to="/" style={{ color: "#FFDE59", textDecoration: "none" }}>
+              Contact
+            </Link>{" "}
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

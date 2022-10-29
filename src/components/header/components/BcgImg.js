@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "40px",
     color: "#FFDE59",
     height: "1000px",
-    minWidth: "100%",
+    // minWidth: "100%",
   },
 }));
 

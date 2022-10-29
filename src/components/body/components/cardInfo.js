@@ -2,9 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ButtonBase from "@material-ui/core/ButtonBase";
-import { Paper } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Paper, Typography } from "@material-ui/core";
+import { Link, NavLink } from "react-router-dom";
 import { products } from "../../../productsData/productData";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 3000,
   },
   image: {
-    width: 408,
+    // width: 408,
     height: 238,
     display: "flex",
     flexDirection: "column",
@@ -42,17 +43,20 @@ export default function CardInfo() {
         <Grid sx={{ flexGrow: 1 }} container spacing={2}>
           {products.map(({ id, name, price, img }) => {
             return (
-              <Grid item xs={3} md={4}>
+              <Grid item xs={12} sm={12} md={6} lg={4} key={id}>
                 <div className={classes.card_text}>
-                  <Link to={id}>
+                  <NavLink
+                    to={id}
+                    style={{ color: "black", textDecoretaion: "none" }}
+                  >
                     <ButtonBase className={classes.image}>
                       <img className={classes.img} alt="complex" src={img} />
                     </ButtonBase>
                     <div className={classes.card_text}>
-                      <h1>{name}</h1>
-                      <h2>{price} Gel</h2>
+                      <Typography>{name}</Typography>
+                      <Typography>{price} Gel</Typography>
                     </div>
-                  </Link>
+                  </NavLink>
                 </div>
               </Grid>
             );
